@@ -1,3 +1,14 @@
 numpy
-pandas
-scipy
+matplotlib~=3.5
+plotly
+pandas~=1.4
+click
+python-dotenv
+tensorflow-probability
+imbalanced-learn
+librosa
+wandb~=0.13
+jupyterlab
+git+https://github.com/pedrolisboa/poseidon.git
+scikit-learn
+requests
