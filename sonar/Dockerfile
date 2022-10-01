@@ -24,7 +24,9 @@ RUN \
     texlive-fonts-recommended \
     xzdec \
     git \
-    vim && \
+    vim \ 
+    less \
+    nano && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
