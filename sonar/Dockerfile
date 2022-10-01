@@ -30,6 +30,5 @@ RUN \
 
 # Install pip packages
 RUN mkdir /images
-RUN cd /images && git clone git@github.com:natmourajr/docker.git && cd sonar && pip install requirements.txt
-
-WORKDIR /
+RUN cd /images && git clone https://github.com/natmourajr/docker.git && cd docker/sonar && pip install -r requirements.txt
+RUN cd /
