@@ -6,7 +6,7 @@ Dockerfiles respository
 
 2 - create a image repo in dockerhub (https://hub.docker.com/)
 
-3 - build in your computer your dockerfile (example in https://github.com/natmourajr/docker/blob/main/sonar/Dockerfile)
+3 - build in your computer your image using a dockerfile (example in https://github.com/natmourajr/docker/blob/main/sonar/Dockerfile)
 ```
 $ docker build . --tag=<login in dockerhub>/sonar:lastest
 ```
