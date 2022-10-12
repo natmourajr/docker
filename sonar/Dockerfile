@@ -1,5 +1,5 @@
 # base image
-FROM tensorflow/tensorflow:latest
+FROM tensorflow/tensorflow:latest-gpu-jupyter
 
 
 LABEL maintainer "Natanael Moura Junior <natmourajr@lps.ufrj.br>"
