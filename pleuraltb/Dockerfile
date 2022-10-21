@@ -42,9 +42,9 @@ RUN pip install --no-cache-dir --upgrade pip setuptools wheel isort
 RUN pip install jax[cuda11_cudnn82] -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 
 # Install pip packages
-RUN mkdir /images
-RUN cd /images && git clone https://github.com/natmourajr/docker.git && cd docker/pleuraltb && pip install -r requirements.txt
-RUN rm -rf /images
+RUN mkdir /docker_images
+RUN cd /docker_images && git clone https://github.com/natmourajr/docker.git && cd docker/pleuraltb && pip install -r requirements.txt
+RUN rm -rf /docker_images
 RUN cd /
 
 RUN mkdir /workspace && cd /workspace
