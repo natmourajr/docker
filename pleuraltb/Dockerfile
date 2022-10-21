@@ -37,6 +37,7 @@ RUN \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+
 # Set python 3 as the default python
 # RUN update-alternatives --set python /usr/local/bin/python3
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel isort
@@ -47,9 +48,10 @@ RUN mkdir /docker_images
 RUN cd /docker_images && git clone https://github.com/natmourajr/docker.git && cd docker/pleuraltb && pip install -r requirements.txt
 RUN rm -rf /docker_images
 RUN cd /
-RUN wget https://raw.githubusercontent.com/natmourajr/docker/main/pleuraltb/setup.sh
 
 ENV NOTEBOOK_PATH /workspace/notebooks
 ENV WORKSPACE /workspace
+
+RUN wget https://raw.githubusercontent.com/natmourajr/docker/main/pleuraltb/setup.sh
 
 RUN mkdir /workspace && cd /workspace
