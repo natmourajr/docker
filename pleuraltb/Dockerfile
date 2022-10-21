@@ -48,3 +48,4 @@ RUN rm -rf /docker_images
 RUN cd /
 
 RUN mkdir /workspace && cd /workspace
+RUN mkdir data && mkdir notebooks
