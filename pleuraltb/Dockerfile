@@ -51,4 +51,3 @@ RUN cd /
 ENV NOTEBOOK_PATH /workspace/notebooks
 
 RUN mkdir /workspace && cd /workspace
-
