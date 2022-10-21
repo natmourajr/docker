@@ -50,5 +50,6 @@ RUN cd /
 RUN wget https://raw.githubusercontent.com/natmourajr/docker/main/pleuraltb/setup.sh
 
 ENV NOTEBOOK_PATH /workspace/notebooks
+ENV WORKSPACE /workspace
 
 RUN mkdir /workspace && cd /workspace
