@@ -32,6 +32,7 @@ RUN \
     less \
     nano \
     nodejs \
+    wget \
     && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -44,9 +45,9 @@ RUN pip install jax[cuda11_cudnn82] -f https://storage.googleapis.com/jax-releas
 # Install pip packages
 RUN mkdir /docker_images
 RUN cd /docker_images && git clone https://github.com/natmourajr/docker.git && cd docker/pleuraltb && pip install -r requirements.txt
-RUN mv /docker_images/docker/pleuraltb/setup.sh /
 RUN rm -rf /docker_images
 RUN cd /
+RUN wget https://raw.githubusercontent.com/natmourajr/docker/main/pleuraltb/setup.sh
 
 ENV NOTEBOOK_PATH /workspace/notebooks
 
