@@ -49,9 +49,10 @@ RUN cd /docker_images && git clone https://github.com/natmourajr/docker.git && c
 RUN rm -rf /docker_images
 RUN cd /
 
+
 ENV NOTEBOOK_PATH /workspace/notebooks
 ENV WORKSPACE /workspace
-
 RUN wget https://raw.githubusercontent.com/natmourajr/docker/main/pleuraltb/setup.sh
+
 
 RUN mkdir /workspace && cd /workspace
