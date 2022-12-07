@@ -1,5 +1,5 @@
 # base image
-FROM tensorflow/tensorflow:latest-gpu
+FROM tensorflow/tensorflow:latest-gpu-jupyter
 
 
 LABEL maintainer "Natanael Moura Junior <natmourajr@lps.ufrj.br>"
@@ -46,5 +46,11 @@ RUN mkdir /images
 RUN cd /images && git clone https://github.com/natmourajr/docker.git && cd docker/sonar && pip install -r requirements.txt
 RUN rm -rf /images
 RUN cd /
+RUN rm -rf tensorflow-tutorials
 
 RUN mkdir /workspace && cd /workspace
+
+ENV NOTEBOOK_PATH /workspace/notebooks
+ENV WORKSPACE /workspace
+
+
