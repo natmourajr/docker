@@ -1,6 +1,5 @@
 # base image
-FROM tensorflow/tensorflow:latest-gpu-jupyter
-
+FROM ubuntu/ubuntu:22.10
 
 LABEL maintainer "Natanael Moura Junior <natmourajr@lps.ufrj.br>"
 
@@ -46,7 +45,7 @@ RUN pip install jax[cuda11_cudnn82] -f https://storage.googleapis.com/jax-releas
 
 # Install pip packages
 RUN mkdir /images
-RUN cd /images && git clone https://github.com/natmourajr/docker.git && cd docker/sonar && pip install -r requirements.txt
+RUN cd /images && git clone https://github.com/natmourajr/docker.git && cd docker/SisLin1 && pip install -r requirements.txt
 RUN rm -rf /images
 RUN cd /
 RUN rm -rf tensorflow-tutorials
