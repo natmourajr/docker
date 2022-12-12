@@ -1,5 +1,5 @@
 # base image
-FROM ubuntu/ubuntu:22.10
+FROM tensorflow/tensorflow:latest-gpu-jupyter
 
 LABEL maintainer "Natanael Moura Junior <natmourajr@lps.ufrj.br>"
 
@@ -17,11 +17,6 @@ RUN ln -snf /usr/share/zoneinfo/Etc/UTC /etc/localtime \
 RUN \
     apt-get update && \
     apt-get install -y --no-install-recommends \
-    texlive-latex-base \
-    texlive-latex-extra \
-    texlive-science \
-    texlive-fonts-recommended \
-    xzdec \
     python3 \
     python3-pip \
     python3-dev \
@@ -30,18 +25,10 @@ RUN \
     vim \ 
     less \
     nano \
-    nodejs \
     && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-
-# Set python 3 as the default python
-# RUN update-alternatives --set python /usr/local/bin/python3
-RUN apt-get update -y
-RUN apt-get install -y libsndfile-dev
-RUN pip install --no-cache-dir --upgrade pip setuptools wheel isort
-RUN pip install jax[cuda11_cudnn82] -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 
 # Install pip packages
 RUN mkdir /images
