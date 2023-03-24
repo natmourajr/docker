@@ -45,10 +45,10 @@ RUN pip install jax[cuda11_cudnn82] -f https://storage.googleapis.com/jax-releas
 
 # Install pip packages
 RUN mkdir /images
-RUN cd /images && git clone https://github.com/natmourajr/docker.git && cd docker/sonar && pip install -r requirements.txt
+RUN cd /images && git clone https://github.com/natmourajr/docker.git && cd docker/AprendizadoPorKernel && pip install -r requirements.txt
 RUN rm -rf /images
 RUN cd /
 RUN rm -rf tensorflow-tutorials
 
-RUN git clone https://github.com/natmourajr/SonarClassification.git && cd SonarClassification && python setup.py install
+#RUN git clone https://github.com/natmourajr/SonarClassification.git && cd SonarClassification && python setup.py install
 
