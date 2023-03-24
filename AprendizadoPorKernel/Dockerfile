@@ -49,5 +49,4 @@ RUN cd /images && git clone https://github.com/natmourajr/docker.git && cd docke
 RUN rm -rf /images
 RUN cd /
 RUN rm -rf tensorflow-tutorials
-l
 
