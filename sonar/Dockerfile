@@ -40,6 +40,7 @@ RUN \
 # RUN update-alternatives --set python /usr/local/bin/python3
 RUN apt-get update -y
 RUN apt-get install -y libsndfile-dev
+RUN python3 -m pip install --upgrade pip
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel isort
 RUN pip install jax[cuda11_cudnn82] -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 
@@ -50,5 +51,7 @@ RUN rm -rf /images
 RUN cd /
 RUN rm -rf tensorflow-tutorials
 
+RUN python3 -m pip install --upgrade pip
+RUN python3 -m pip install --upgrade pip
 RUN git clone https://github.com/natmourajr/SonarClassification.git && cd SonarClassification && python setup.py install
 
