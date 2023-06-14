@@ -52,6 +52,6 @@ RUN cd /
 RUN rm -rf tensorflow-tutorials
 
 RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install --upgrade pip
+RUN pip install bokeh seaborn imageio scikit-image
 RUN git clone https://github.com/natmourajr/SonarClassification.git && cd SonarClassification && python setup.py install
 
