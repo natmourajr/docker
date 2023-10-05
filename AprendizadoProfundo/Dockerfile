@@ -1,6 +1,5 @@
 # base image
-#FROM pytorch/pytorch:1.13.1-cuda11.6-cudnn8-runtime
-FROM cschranz/gpu-jupyter:v1.5_cuda-11.6_ubuntu-20.04
+FROM tensorflow/tensorflow:latest-gpu-jupyter
 
 LABEL maintainer "Natanael Moura Junior <natmourajr@lps.ufrj.br>"
 
@@ -18,12 +17,20 @@ RUN ln -snf /usr/share/zoneinfo/Etc/UTC /etc/localtime \
 RUN \
     apt-get update && \
     apt-get install -y --no-install-recommends \
+    texlive-latex-base \
+    texlive-latex-extra \
+    texlive-science \
+    texlive-fonts-recommended \
     xzdec \
     python3 \
     python3-pip \
     python3-dev \
     python3-venv \
     git \
+    vim \ 
+    less \
+    nano \
+    nodejs \
     && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -38,6 +45,8 @@ RUN pip install jax[cuda11_cudnn82] -f https://storage.googleapis.com/jax-releas
 
 # Install pip packages
 RUN mkdir /images
-RUN cd /images && git clone https://github.com/natmourajr/docker.git && cd docker/cenpes && pip install -r requirements.txt
+RUN cd /images && git clone https://github.com/natmourajr/docker.git && cd docker/AprendizadoPorKernel && pip install -r requirements.txt
 RUN rm -rf /images
 RUN cd /
+RUN rm -rf tensorflow-tutorials
+
